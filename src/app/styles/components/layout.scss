@@ -1,0 +1,19 @@
+/*
+components: layout.scss
+*/
+.l {
+  display: flex;
+  &--side {
+    width: 250px;
+    height: calc(100vh - 80px);
+    background-color: peru;
+    overflow: hidden;
+  }
+
+  &--main {
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

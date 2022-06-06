@@ -1,0 +1,26 @@
+/*
+utils: spacers.scss
+*/
+
+.m {
+  &l {
+    &-24 {
+      margin-left: 24px;
+    }
+  }
+  &r {
+    &-24 {
+      margin-right: 24px;
+    }
+  }
+  &t {
+    &-24 {
+      margin-top: 24px;
+    }
+  }
+  &b {
+    &-24 {
+      margin-bottom: 24px;
+    }
+  }
+}

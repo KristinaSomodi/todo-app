@@ -1,0 +1,18 @@
+/*
+components: task.scss
+*/
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $black;
+  width: 300px;
+  padding: 8px 24px;
+
+  &__delete {
+    cursor: pointer;
+    &:hover {
+      color: $color-error;
+    }
+  }
+}
