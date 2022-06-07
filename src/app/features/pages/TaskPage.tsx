@@ -8,6 +8,7 @@ function TaskPage() {
   const [taskName, setTaskName] = useState<string>("");
   const [taskArr, setTaskArr] = useState<Task[]>([]);
   const [taskSearch, setTaskSearch] = useState<string>("");
+  const [active, setActive] = useState<boolean>(false);
 
   function handleTaskNameChange(event: React.ChangeEvent<HTMLInputElement>) {
     setTaskName(event.target.value);
@@ -40,15 +41,19 @@ function TaskPage() {
     <>
       <Nav />
       <div className="l">
-        <div className="l--side">
-          <Sidebar />
-        </div>
-        <div className="l--main">
+        <Sidebar active={active} />
+
+        <div
+          className="l--main"
+          onClick={() => {
+            if (active) setActive(!active);
+          }}
+        >
           <div className="field mt-24">
             <input
               type="text"
               placeholder="search..."
-              className="input input--primary input--base"
+              className="input input--primary input--base input--s"
               onChange={(event) => search(event)}
             ></input>
             <i className="icon icon--base icon--search"></i>
@@ -58,29 +63,29 @@ function TaskPage() {
             <input
               type="text"
               placeholder="to do"
-              className="input input--primary input--base"
+              className="input input--primary input--base input--s"
               value={taskName}
               onChange={(event) => handleTaskNameChange(event)}
             />
 
-            <button id="btn" onClick={createTask}>
+            <button className="btn--save ml-24" id="btn" onClick={createTask}>
               Save
             </button>
           </div>
 
           <div className="title--primary mt-24">Task list</div>
 
-          <div className="task mt-24">
-            <div className="task__title">Task title</div>
-            <div className="task__delete">Delete</div>
-          </div>
-
           <div>
             {taskArr.filter(handleSearch).map((task) => {
               return (
-                <div key={task.id}>
-                  <div>{task.title}</div>
-                  <button onClick={() => deleteTask(task.id)}>Delete</button>
+                <div className="task mt-24" key={task.id}>
+                  <div className="task__title">{task.title}</div>
+                  <div
+                    className="task__delete"
+                    onClick={() => deleteTask(task.id)}
+                  >
+                    Delete
+                  </div>
                 </div>
               );
             })}

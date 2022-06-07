@@ -3,10 +3,10 @@ components: layout.scss
 */
 .l {
   display: flex;
-  &--side {
+  &--side.active {
     width: 250px;
     height: calc(100vh - 80px);
-    background-color: peru;
+    background-color: $gray-d;
     overflow: hidden;
   }
 

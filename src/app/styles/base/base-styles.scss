@@ -1,6 +1,7 @@
 /*
  base: base-styles.scss
 */
+@import "vars";
 
 * {
   box-sizing: border-box;
@@ -10,8 +11,13 @@
 body {
   padding: 0px;
   margin: 0px;
+  background-color: $gray-l;
 }
 
 a {
   text-decoration: none;
+  color: $yellow-d;
+  &:hover {
+    color: $yellow-l;
+  }
 }

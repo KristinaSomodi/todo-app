@@ -24,3 +24,29 @@ utils: spacers.scss
     }
   }
 }
+
+.p {
+  &l {
+    &-24 {
+      padding-left: 24px;
+    }
+  }
+
+  &r {
+    &-24 {
+      padding-right: 24px;
+    }
+  }
+
+  &t {
+    &-24 {
+      padding-top: 24px;
+    }
+  }
+
+  &b {
+    &-24 {
+      padding-bottom: 24px;
+    }
+  }
+}
