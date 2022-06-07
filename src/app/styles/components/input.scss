@@ -5,9 +5,10 @@
 .input {
   &--primary {
     border: 1px solid $gray-d;
-
     background-color: $gray-d;
   }
+
+  //size
   &--s {
     padding: 8px 20px;
     font-size: 16px;

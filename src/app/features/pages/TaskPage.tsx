@@ -8,7 +8,6 @@ function TaskPage() {
   const [taskName, setTaskName] = useState<string>("");
   const [taskArr, setTaskArr] = useState<Task[]>([]);
   const [taskSearch, setTaskSearch] = useState<string>("");
-  const [active, setActive] = useState<boolean>(false);
 
   function handleTaskNameChange(event: React.ChangeEvent<HTMLInputElement>) {
     setTaskName(event.target.value);
@@ -18,8 +17,6 @@ function TaskPage() {
     setTaskArr([...taskArr, { id: randomId(), title: taskName }]);
     setTaskName("");
   }
-
-  console.log(taskArr);
 
   function deleteTask(taskId: string) {
     setTaskArr(taskArr.filter((task) => task.id !== taskId));
@@ -41,14 +38,9 @@ function TaskPage() {
     <>
       <Nav />
       <div className="l">
-        <Sidebar active={active} />
+        <Sidebar />
 
-        <div
-          className="l--main"
-          onClick={() => {
-            if (active) setActive(!active);
-          }}
-        >
+        <div className="l--main">
           <div className="field mt-24">
             <input
               type="text"

@@ -5,7 +5,11 @@ components: sidebar.scss
   display: flex;
   flex-direction: column;
   visibility: hidden;
-}
-.sidebar.active {
-  visibility: visible;
+
+  &__link {
+    padding: 24px;
+  }
+  &.active {
+    visibility: visible;
+  }
 }
